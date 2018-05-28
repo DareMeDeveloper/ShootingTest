@@ -8,12 +8,12 @@ public class Duck_Script : MonoBehaviour {
     public Transform Respawn;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        rb.AddForce(-500, 0, 0 * Time.deltaTime);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        rb.AddForce(-10, 0, 0 * Time.deltaTime);
+      
 	}
     void OnTriggerEnter(Collider other)
     {
