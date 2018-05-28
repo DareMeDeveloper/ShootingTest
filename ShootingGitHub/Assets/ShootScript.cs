@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootScript : MonoBehaviour {
-
+    public Transform Player;
+    public Transform tran;
     public Rigidbody rb;
     public float Force;
 
@@ -18,6 +19,8 @@ public class ShootScript : MonoBehaviour {
     }
     void OnTriggerEnter(Collider other)
     {
+        Player.position = tran.position;
+
         if(other.tag == "Duck")
         {
             Debug.Log("I KILLED A DUCK");
@@ -25,6 +28,6 @@ public class ShootScript : MonoBehaviour {
     }
     void OnMouseDown()
     {
-        rb.AddForce(0, 0, Force * 100 * Time.deltaTime);
+        rb.AddForce(0, 0, Force * 10 * Time.deltaTime);
     }
 }
